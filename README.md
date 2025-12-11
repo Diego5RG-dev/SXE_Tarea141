@@ -64,10 +64,25 @@ Tenemos que ejecutar una consulta para visualizar los datos de Odoo. Básicament
 
 
 ---
-Actividad 5 y 6 
+Actividad 5  
 ---
+Esta es la sentencia que ejecutamos sobre la facturación consultando la tabla public.account_move.
 
-Actividad en pausa debido a errores
+![alt text](recursosSqlite/Tarea5cor.png)
+
+        SELECT invoice_partner_display_name, name, date, amount_untaxed FROM public.account_move
+         WHERE move_type = 'out_refund' and state = 'posted' ORDER BY date DESC;
+
+---
+Actividad 6  
+---
+Esta es la sentencia que ejecutamos sobre la facturación consultando la tabla public.account_move con un filtro.
+
+![alt text](recursosSqlite/Tarea6Rec.png)
+
+        SELECT invoice_partner_display_name as nombre_empresa, count(*) as numero_facturas,sum(amount_untaxed_signed) as total_facturado FROM public.account_move
+         WHERE move_type = 'out_invoice' and state = 'posted' 
+         GROUP BY invoice_partner_display_name having count(*)>2;
 
 
 ---
