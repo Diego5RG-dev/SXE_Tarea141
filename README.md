@@ -68,7 +68,7 @@ Actividad 5
 ---
 Esta es la sentencia que ejecutamos sobre la facturación consultando la tabla public.account_move.
 
-![alt text](recursosSqlite/Tarea5cor.png)
+![alt text](https://github.com/Diego5RG-dev/SXE_Tarea141/blob/main/recursosOdoo/Tarea5cor.png)
 
         SELECT invoice_partner_display_name, name, date, amount_untaxed FROM public.account_move
          WHERE move_type = 'out_refund' and state = 'posted' ORDER BY date DESC;
@@ -78,7 +78,7 @@ Actividad 6
 ---
 Esta es la sentencia que ejecutamos sobre la facturación consultando la tabla public.account_move con un filtro.
 
-![alt text](recursosSqlite/Tarea6Rec.png)
+![alt text](https://github.com/Diego5RG-dev/SXE_Tarea141/blob/main/recursosOdoo/Tarea6Rec.png)
 
         SELECT invoice_partner_display_name as nombre_empresa, count(*) as numero_facturas,sum(amount_untaxed_signed) as total_facturado FROM public.account_move
          WHERE move_type = 'out_invoice' and state = 'posted' 
